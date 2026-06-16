@@ -1,0 +1,41 @@
+		:: LAB_4 ::
+
+Task-1:
+	Given F(A,B,C) = A.B' + B.C
+	
+	Truth Table:
+		A	B	C	F
+		0	0	0	0
+		0	0	1	0
+		0	1	0	0
+		0	1	1	1
+		1	0	0	1
+		1	0	1	1
+		1	1	0	0
+		1	1	1	1
+		
+Task-4:
+	P1 = MSB
+	P0 = LSB
+	
+	State Table:
+		If Enable is 1 then increment counter so
+		N1* = P1 OR P0
+		N0* = P1 OR P0'
+		
+		Present State(P1 P0)	Next state(N1* N0*)
+		0 0			0 1
+		0 1			1 0
+		1 0			1 1
+		1 1			1 1
+		
+		
+		If Enable is 0 then decrement counter so
+		N1* = P1 AND P0
+		N0* = P1 AND P0'
+		
+		Present State(P1 P0)	Next state(N1* N0*)
+		1 1			1 0
+		1 0			0 1
+		0 1			0 0
+		0 0			0 0
