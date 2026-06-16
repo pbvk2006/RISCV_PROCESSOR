@@ -1,0 +1,1116 @@
+
+a.out:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000ad000000 <main>:
+    ad000000:	42fd                	li	t0,31
+    ad000002:	3a029073          	csrw	pmpcfg0,t0
+    ad000006:	52fd                	li	t0,-1
+    ad000008:	3b029073          	csrw	pmpaddr0,t0
+    ad00000c:	00000297          	auipc	t0,0x0
+    ad000010:	02828293          	addi	t0,t0,40 # ad000034 <supervisor>
+    ad000014:	34129073          	csrw	mepc,t0
+    ad000018:	6285                	lui	t0,0x1
+    ad00001a:	3002b073          	csrc	mstatus,t0
+    ad00001e:	6285                	lui	t0,0x1
+    ad000020:	8002829b          	addiw	t0,t0,-2048
+    ad000024:	3002a073          	csrs	mstatus,t0
+    ad000028:	10000293          	li	t0,256
+    ad00002c:	3022a073          	csrs	medeleg,t0
+    ad000030:	30200073          	mret
+
+00000000ad000034 <supervisor>:
+    ad000034:	000ad2b7          	lui	t0,0xad
+    ad000038:	228d                	addiw	t0,t0,3
+    ad00003a:	02b2                	slli	t0,t0,0xc
+    ad00003c:	4305                	li	t1,1
+    ad00003e:	0002b3b7          	lui	t2,0x2b
+    ad000042:	4013839b          	addiw	t2,t2,1025
+    ad000046:	03ba                	slli	t2,t2,0xe
+    ad000048:	0023d393          	srli	t2,t2,0x2
+    ad00004c:	00736333          	or	t1,t1,t2
+    ad000050:	0062b023          	sd	t1,0(t0) # ad000 <main-0xacf53000>
+    ad000054:	0002b3b7          	lui	t2,0x2b
+    ad000058:	4013839b          	addiw	t2,t2,1025
+    ad00005c:	03ba                	slli	t2,t2,0xe
+    ad00005e:	000ad337          	lui	t1,0xad
+    ad000062:	2315                	addiw	t1,t1,5
+    ad000064:	0332                	slli	t1,t1,0xc
+    ad000066:	00235313          	srli	t1,t1,0x2
+    ad00006a:	00136313          	ori	t1,t1,1
+    ad00006e:	0063b023          	sd	t1,0(t2) # 2b000 <main-0xacfd5000>
+    ad000072:	000ad2b7          	lui	t0,0xad
+    ad000076:	229d                	addiw	t0,t0,7
+    ad000078:	02b2                	slli	t0,t0,0xc
+    ad00007a:	0022d293          	srli	t0,t0,0x2
+    ad00007e:	0012e293          	ori	t0,t0,1
+    ad000082:	0053b823          	sd	t0,16(t2)
+    ad000086:	000ad2b7          	lui	t0,0xad
+    ad00008a:	2295                	addiw	t0,t0,5
+    ad00008c:	02b2                	slli	t0,t0,0xc
+    ad00008e:	00057337          	lui	t1,0x57
+    ad000092:	8033031b          	addiw	t1,t1,-2045
+    ad000096:	0336                	slli	t1,t1,0xd
+    ad000098:	00235313          	srli	t1,t1,0x2
+    ad00009c:	00136313          	ori	t1,t1,1
+    ad0000a0:	0062b023          	sd	t1,0(t0) # ad000 <main-0xacf53000>
+    ad0000a4:	000ad2b7          	lui	t0,0xad
+    ad0000a8:	229d                	addiw	t0,t0,7
+    ad0000aa:	02b2                	slli	t0,t0,0xc
+    ad0000ac:	6359                	lui	t1,0x16
+    ad0000ae:	a013031b          	addiw	t1,t1,-1535
+    ad0000b2:	033e                	slli	t1,t1,0xf
+    ad0000b4:	00235313          	srli	t1,t1,0x2
+    ad0000b8:	00136313          	ori	t1,t1,1
+    ad0000bc:	6385                	lui	t2,0x1
+    ad0000be:	b403839b          	addiw	t2,t2,-1216
+    ad0000c2:	9396                	add	t2,t2,t0
+    ad0000c4:	0063b023          	sd	t1,0(t2) # 1000 <main-0xacfff000>
+    ad0000c8:	000573b7          	lui	t2,0x57
+    ad0000cc:	8033839b          	addiw	t2,t2,-2045
+    ad0000d0:	03b6                	slli	t2,t2,0xd
+    ad0000d2:	000ad337          	lui	t1,0xad
+    ad0000d6:	2305                	addiw	t1,t1,1
+    ad0000d8:	0332                	slli	t1,t1,0xc
+    ad0000da:	00235313          	srli	t1,t1,0x2
+    ad0000de:	0df36313          	ori	t1,t1,223
+    ad0000e2:	0063b023          	sd	t1,0(t2) # 57000 <main-0xacfa9000>
+    ad0000e6:	000572b7          	lui	t0,0x57
+    ad0000ea:	8012829b          	addiw	t0,t0,-2047
+    ad0000ee:	02b6                	slli	t0,t0,0xd
+    ad0000f0:	0022d293          	srli	t0,t0,0x2
+    ad0000f4:	0df2e293          	ori	t0,t0,223
+    ad0000f8:	0053b423          	sd	t0,8(t2)
+    ad0000fc:	62d9                	lui	t0,0x16
+    ad0000fe:	a012829b          	addiw	t0,t0,-1535
+    ad000102:	02be                	slli	t0,t0,0xf
+    ad000104:	0ad0031b          	addiw	t1,zero,173
+    ad000108:	0362                	slli	t1,t1,0x18
+    ad00010a:	00235313          	srli	t1,t1,0x2
+    ad00010e:	0cb36313          	ori	t1,t1,203
+    ad000112:	0062b023          	sd	t1,0(t0) # 16000 <main-0xacfea000>
+    ad000116:	10000293          	li	t0,256
+    ad00011a:	1002b073          	csrc	sstatus,t0
+    ad00011e:	000ad2b7          	lui	t0,0xad
+    ad000122:	228d                	addiw	t0,t0,3
+    ad000124:	02b2                	slli	t0,t0,0xc
+    ad000126:	00c2d293          	srli	t0,t0,0xc
+    ad00012a:	ff90031b          	addiw	t1,zero,-7
+    ad00012e:	1372                	slli	t1,t1,0x3c
+    ad000130:	0062e2b3          	or	t0,t0,t1
+    ad000134:	00002317          	auipc	t1,0x2
+    ad000138:	eec30313          	addi	t1,t1,-276 # ad002020 <satp_config>
+    ad00013c:	00533023          	sd	t0,0(t1)
+    ad000140:	00002317          	auipc	t1,0x2
+    ad000144:	ee030313          	addi	t1,t1,-288 # ad002020 <satp_config>
+    ad000148:	00033383          	ld	t2,0(t1)
+    ad00014c:	12000073          	sfence.vma
+    ad000150:	18039073          	csrw	satp,t2
+    ad000154:	12000073          	sfence.vma
+    ad000158:	4e81                	li	t4,0
+    ad00015a:	141e9073          	csrw	sepc,t4
+    ad00015e:	10200073          	sret
+    ad000162:	00000013          	nop
+    ad000166:	00000013          	nop
+    ad00016a:	00000013          	nop
+    ad00016e:	00000013          	nop
+    ad000172:	00000013          	nop
+    ad000176:	00000013          	nop
+    ad00017a:	00000013          	nop
+    ad00017e:	00000013          	nop
+    ad000182:	00000013          	nop
+    ad000186:	00000013          	nop
+    ad00018a:	00000013          	nop
+    ad00018e:	00000013          	nop
+    ad000192:	00000013          	nop
+    ad000196:	00000013          	nop
+    ad00019a:	00000013          	nop
+    ad00019e:	00000013          	nop
+    ad0001a2:	00000013          	nop
+    ad0001a6:	00000013          	nop
+    ad0001aa:	00000013          	nop
+    ad0001ae:	00000013          	nop
+    ad0001b2:	00000013          	nop
+    ad0001b6:	00000013          	nop
+    ad0001ba:	00000013          	nop
+    ad0001be:	00000013          	nop
+    ad0001c2:	00000013          	nop
+    ad0001c6:	00000013          	nop
+    ad0001ca:	00000013          	nop
+    ad0001ce:	00000013          	nop
+    ad0001d2:	00000013          	nop
+    ad0001d6:	00000013          	nop
+    ad0001da:	00000013          	nop
+    ad0001de:	00000013          	nop
+    ad0001e2:	00000013          	nop
+    ad0001e6:	00000013          	nop
+    ad0001ea:	00000013          	nop
+    ad0001ee:	00000013          	nop
+    ad0001f2:	00000013          	nop
+    ad0001f6:	00000013          	nop
+    ad0001fa:	00000013          	nop
+    ad0001fe:	00000013          	nop
+    ad000202:	00000013          	nop
+    ad000206:	00000013          	nop
+    ad00020a:	00000013          	nop
+    ad00020e:	00000013          	nop
+    ad000212:	00000013          	nop
+    ad000216:	00000013          	nop
+    ad00021a:	00000013          	nop
+    ad00021e:	00000013          	nop
+    ad000222:	00000013          	nop
+    ad000226:	00000013          	nop
+    ad00022a:	00000013          	nop
+    ad00022e:	00000013          	nop
+    ad000232:	00000013          	nop
+    ad000236:	00000013          	nop
+    ad00023a:	00000013          	nop
+    ad00023e:	00000013          	nop
+    ad000242:	00000013          	nop
+    ad000246:	00000013          	nop
+    ad00024a:	00000013          	nop
+    ad00024e:	00000013          	nop
+    ad000252:	00000013          	nop
+    ad000256:	00000013          	nop
+    ad00025a:	00000013          	nop
+    ad00025e:	00000013          	nop
+    ad000262:	00000013          	nop
+    ad000266:	00000013          	nop
+    ad00026a:	00000013          	nop
+    ad00026e:	00000013          	nop
+    ad000272:	00000013          	nop
+    ad000276:	00000013          	nop
+    ad00027a:	00000013          	nop
+    ad00027e:	00000013          	nop
+    ad000282:	00000013          	nop
+    ad000286:	00000013          	nop
+    ad00028a:	00000013          	nop
+    ad00028e:	00000013          	nop
+    ad000292:	00000013          	nop
+    ad000296:	00000013          	nop
+    ad00029a:	00000013          	nop
+    ad00029e:	00000013          	nop
+    ad0002a2:	00000013          	nop
+    ad0002a6:	00000013          	nop
+    ad0002aa:	00000013          	nop
+    ad0002ae:	00000013          	nop
+    ad0002b2:	00000013          	nop
+    ad0002b6:	00000013          	nop
+    ad0002ba:	00000013          	nop
+    ad0002be:	00000013          	nop
+    ad0002c2:	00000013          	nop
+    ad0002c6:	00000013          	nop
+    ad0002ca:	00000013          	nop
+    ad0002ce:	00000013          	nop
+    ad0002d2:	00000013          	nop
+    ad0002d6:	00000013          	nop
+    ad0002da:	00000013          	nop
+    ad0002de:	00000013          	nop
+    ad0002e2:	00000013          	nop
+    ad0002e6:	00000013          	nop
+    ad0002ea:	00000013          	nop
+    ad0002ee:	00000013          	nop
+    ad0002f2:	00000013          	nop
+    ad0002f6:	00000013          	nop
+    ad0002fa:	00000013          	nop
+    ad0002fe:	00000013          	nop
+    ad000302:	00000013          	nop
+    ad000306:	00000013          	nop
+    ad00030a:	00000013          	nop
+    ad00030e:	00000013          	nop
+    ad000312:	00000013          	nop
+    ad000316:	00000013          	nop
+    ad00031a:	00000013          	nop
+    ad00031e:	00000013          	nop
+    ad000322:	00000013          	nop
+    ad000326:	00000013          	nop
+    ad00032a:	00000013          	nop
+    ad00032e:	00000013          	nop
+    ad000332:	00000013          	nop
+    ad000336:	00000013          	nop
+    ad00033a:	00000013          	nop
+    ad00033e:	00000013          	nop
+    ad000342:	00000013          	nop
+    ad000346:	00000013          	nop
+    ad00034a:	00000013          	nop
+    ad00034e:	00000013          	nop
+    ad000352:	00000013          	nop
+    ad000356:	00000013          	nop
+    ad00035a:	00000013          	nop
+    ad00035e:	00000013          	nop
+    ad000362:	00000013          	nop
+    ad000366:	00000013          	nop
+    ad00036a:	00000013          	nop
+    ad00036e:	00000013          	nop
+    ad000372:	00000013          	nop
+    ad000376:	00000013          	nop
+    ad00037a:	00000013          	nop
+    ad00037e:	00000013          	nop
+    ad000382:	00000013          	nop
+    ad000386:	00000013          	nop
+    ad00038a:	00000013          	nop
+    ad00038e:	00000013          	nop
+    ad000392:	00000013          	nop
+    ad000396:	00000013          	nop
+    ad00039a:	00000013          	nop
+    ad00039e:	00000013          	nop
+    ad0003a2:	00000013          	nop
+    ad0003a6:	00000013          	nop
+    ad0003aa:	00000013          	nop
+    ad0003ae:	00000013          	nop
+    ad0003b2:	00000013          	nop
+    ad0003b6:	00000013          	nop
+    ad0003ba:	00000013          	nop
+    ad0003be:	00000013          	nop
+    ad0003c2:	00000013          	nop
+    ad0003c6:	00000013          	nop
+    ad0003ca:	00000013          	nop
+    ad0003ce:	00000013          	nop
+    ad0003d2:	00000013          	nop
+    ad0003d6:	00000013          	nop
+    ad0003da:	00000013          	nop
+    ad0003de:	00000013          	nop
+    ad0003e2:	00000013          	nop
+    ad0003e6:	00000013          	nop
+    ad0003ea:	00000013          	nop
+    ad0003ee:	00000013          	nop
+    ad0003f2:	00000013          	nop
+    ad0003f6:	00000013          	nop
+    ad0003fa:	00000013          	nop
+    ad0003fe:	00000013          	nop
+    ad000402:	00000013          	nop
+    ad000406:	00000013          	nop
+    ad00040a:	00000013          	nop
+    ad00040e:	00000013          	nop
+    ad000412:	00000013          	nop
+    ad000416:	00000013          	nop
+    ad00041a:	00000013          	nop
+    ad00041e:	00000013          	nop
+    ad000422:	00000013          	nop
+    ad000426:	00000013          	nop
+    ad00042a:	00000013          	nop
+    ad00042e:	00000013          	nop
+    ad000432:	00000013          	nop
+    ad000436:	00000013          	nop
+    ad00043a:	00000013          	nop
+    ad00043e:	00000013          	nop
+    ad000442:	00000013          	nop
+    ad000446:	00000013          	nop
+    ad00044a:	00000013          	nop
+    ad00044e:	00000013          	nop
+    ad000452:	00000013          	nop
+    ad000456:	00000013          	nop
+    ad00045a:	00000013          	nop
+    ad00045e:	00000013          	nop
+    ad000462:	00000013          	nop
+    ad000466:	00000013          	nop
+    ad00046a:	00000013          	nop
+    ad00046e:	00000013          	nop
+    ad000472:	00000013          	nop
+    ad000476:	00000013          	nop
+    ad00047a:	00000013          	nop
+    ad00047e:	00000013          	nop
+    ad000482:	00000013          	nop
+    ad000486:	00000013          	nop
+    ad00048a:	00000013          	nop
+    ad00048e:	00000013          	nop
+    ad000492:	00000013          	nop
+    ad000496:	00000013          	nop
+    ad00049a:	00000013          	nop
+    ad00049e:	00000013          	nop
+    ad0004a2:	00000013          	nop
+    ad0004a6:	00000013          	nop
+    ad0004aa:	00000013          	nop
+    ad0004ae:	00000013          	nop
+    ad0004b2:	00000013          	nop
+    ad0004b6:	00000013          	nop
+    ad0004ba:	00000013          	nop
+    ad0004be:	00000013          	nop
+    ad0004c2:	00000013          	nop
+    ad0004c6:	00000013          	nop
+    ad0004ca:	00000013          	nop
+    ad0004ce:	00000013          	nop
+    ad0004d2:	00000013          	nop
+    ad0004d6:	00000013          	nop
+    ad0004da:	00000013          	nop
+    ad0004de:	00000013          	nop
+    ad0004e2:	00000013          	nop
+    ad0004e6:	00000013          	nop
+    ad0004ea:	00000013          	nop
+    ad0004ee:	00000013          	nop
+    ad0004f2:	00000013          	nop
+    ad0004f6:	00000013          	nop
+    ad0004fa:	00000013          	nop
+    ad0004fe:	00000013          	nop
+    ad000502:	00000013          	nop
+    ad000506:	00000013          	nop
+    ad00050a:	00000013          	nop
+    ad00050e:	00000013          	nop
+    ad000512:	00000013          	nop
+    ad000516:	00000013          	nop
+    ad00051a:	00000013          	nop
+    ad00051e:	00000013          	nop
+    ad000522:	00000013          	nop
+    ad000526:	00000013          	nop
+    ad00052a:	00000013          	nop
+    ad00052e:	00000013          	nop
+    ad000532:	00000013          	nop
+    ad000536:	00000013          	nop
+    ad00053a:	00000013          	nop
+    ad00053e:	00000013          	nop
+    ad000542:	00000013          	nop
+    ad000546:	00000013          	nop
+    ad00054a:	00000013          	nop
+    ad00054e:	00000013          	nop
+    ad000552:	00000013          	nop
+    ad000556:	00000013          	nop
+    ad00055a:	00000013          	nop
+    ad00055e:	00000013          	nop
+    ad000562:	00000013          	nop
+    ad000566:	00000013          	nop
+    ad00056a:	00000013          	nop
+    ad00056e:	00000013          	nop
+    ad000572:	00000013          	nop
+    ad000576:	00000013          	nop
+    ad00057a:	00000013          	nop
+    ad00057e:	00000013          	nop
+    ad000582:	00000013          	nop
+    ad000586:	00000013          	nop
+    ad00058a:	00000013          	nop
+    ad00058e:	00000013          	nop
+    ad000592:	00000013          	nop
+    ad000596:	00000013          	nop
+    ad00059a:	00000013          	nop
+    ad00059e:	00000013          	nop
+    ad0005a2:	00000013          	nop
+    ad0005a6:	00000013          	nop
+    ad0005aa:	00000013          	nop
+    ad0005ae:	00000013          	nop
+    ad0005b2:	00000013          	nop
+    ad0005b6:	00000013          	nop
+    ad0005ba:	00000013          	nop
+    ad0005be:	00000013          	nop
+    ad0005c2:	00000013          	nop
+    ad0005c6:	00000013          	nop
+    ad0005ca:	00000013          	nop
+    ad0005ce:	00000013          	nop
+    ad0005d2:	00000013          	nop
+    ad0005d6:	00000013          	nop
+    ad0005da:	00000013          	nop
+    ad0005de:	00000013          	nop
+    ad0005e2:	00000013          	nop
+    ad0005e6:	00000013          	nop
+    ad0005ea:	00000013          	nop
+    ad0005ee:	00000013          	nop
+    ad0005f2:	00000013          	nop
+    ad0005f6:	00000013          	nop
+    ad0005fa:	00000013          	nop
+    ad0005fe:	00000013          	nop
+    ad000602:	00000013          	nop
+    ad000606:	00000013          	nop
+    ad00060a:	00000013          	nop
+    ad00060e:	00000013          	nop
+    ad000612:	00000013          	nop
+    ad000616:	00000013          	nop
+    ad00061a:	00000013          	nop
+    ad00061e:	00000013          	nop
+    ad000622:	00000013          	nop
+    ad000626:	00000013          	nop
+    ad00062a:	00000013          	nop
+    ad00062e:	00000013          	nop
+    ad000632:	00000013          	nop
+    ad000636:	00000013          	nop
+    ad00063a:	00000013          	nop
+    ad00063e:	00000013          	nop
+    ad000642:	00000013          	nop
+    ad000646:	00000013          	nop
+    ad00064a:	00000013          	nop
+    ad00064e:	00000013          	nop
+    ad000652:	00000013          	nop
+    ad000656:	00000013          	nop
+    ad00065a:	00000013          	nop
+    ad00065e:	00000013          	nop
+    ad000662:	00000013          	nop
+    ad000666:	00000013          	nop
+    ad00066a:	00000013          	nop
+    ad00066e:	00000013          	nop
+    ad000672:	00000013          	nop
+    ad000676:	00000013          	nop
+    ad00067a:	00000013          	nop
+    ad00067e:	00000013          	nop
+    ad000682:	00000013          	nop
+    ad000686:	00000013          	nop
+    ad00068a:	00000013          	nop
+    ad00068e:	00000013          	nop
+    ad000692:	00000013          	nop
+    ad000696:	00000013          	nop
+    ad00069a:	00000013          	nop
+    ad00069e:	00000013          	nop
+    ad0006a2:	00000013          	nop
+    ad0006a6:	00000013          	nop
+    ad0006aa:	00000013          	nop
+    ad0006ae:	00000013          	nop
+    ad0006b2:	00000013          	nop
+    ad0006b6:	00000013          	nop
+    ad0006ba:	00000013          	nop
+    ad0006be:	00000013          	nop
+    ad0006c2:	00000013          	nop
+    ad0006c6:	00000013          	nop
+    ad0006ca:	00000013          	nop
+    ad0006ce:	00000013          	nop
+    ad0006d2:	00000013          	nop
+    ad0006d6:	00000013          	nop
+    ad0006da:	00000013          	nop
+    ad0006de:	00000013          	nop
+    ad0006e2:	00000013          	nop
+    ad0006e6:	00000013          	nop
+    ad0006ea:	00000013          	nop
+    ad0006ee:	00000013          	nop
+    ad0006f2:	00000013          	nop
+    ad0006f6:	00000013          	nop
+    ad0006fa:	00000013          	nop
+    ad0006fe:	00000013          	nop
+    ad000702:	00000013          	nop
+    ad000706:	00000013          	nop
+    ad00070a:	00000013          	nop
+    ad00070e:	00000013          	nop
+    ad000712:	00000013          	nop
+    ad000716:	00000013          	nop
+    ad00071a:	00000013          	nop
+    ad00071e:	00000013          	nop
+    ad000722:	00000013          	nop
+    ad000726:	00000013          	nop
+    ad00072a:	00000013          	nop
+    ad00072e:	00000013          	nop
+    ad000732:	00000013          	nop
+    ad000736:	00000013          	nop
+    ad00073a:	00000013          	nop
+    ad00073e:	00000013          	nop
+    ad000742:	00000013          	nop
+    ad000746:	00000013          	nop
+    ad00074a:	00000013          	nop
+    ad00074e:	00000013          	nop
+    ad000752:	00000013          	nop
+    ad000756:	00000013          	nop
+    ad00075a:	00000013          	nop
+    ad00075e:	00000013          	nop
+    ad000762:	00000013          	nop
+    ad000766:	00000013          	nop
+    ad00076a:	00000013          	nop
+    ad00076e:	00000013          	nop
+    ad000772:	00000013          	nop
+    ad000776:	00000013          	nop
+    ad00077a:	00000013          	nop
+    ad00077e:	00000013          	nop
+    ad000782:	00000013          	nop
+    ad000786:	00000013          	nop
+    ad00078a:	00000013          	nop
+    ad00078e:	00000013          	nop
+    ad000792:	00000013          	nop
+    ad000796:	00000013          	nop
+    ad00079a:	00000013          	nop
+    ad00079e:	00000013          	nop
+    ad0007a2:	00000013          	nop
+    ad0007a6:	00000013          	nop
+    ad0007aa:	00000013          	nop
+    ad0007ae:	00000013          	nop
+    ad0007b2:	00000013          	nop
+    ad0007b6:	00000013          	nop
+    ad0007ba:	00000013          	nop
+    ad0007be:	00000013          	nop
+    ad0007c2:	00000013          	nop
+    ad0007c6:	00000013          	nop
+    ad0007ca:	00000013          	nop
+    ad0007ce:	00000013          	nop
+    ad0007d2:	00000013          	nop
+    ad0007d6:	00000013          	nop
+    ad0007da:	00000013          	nop
+    ad0007de:	00000013          	nop
+    ad0007e2:	00000013          	nop
+    ad0007e6:	00000013          	nop
+    ad0007ea:	00000013          	nop
+    ad0007ee:	00000013          	nop
+    ad0007f2:	00000013          	nop
+    ad0007f6:	00000013          	nop
+    ad0007fa:	00000013          	nop
+    ad0007fe:	00000013          	nop
+    ad000802:	00000013          	nop
+    ad000806:	00000013          	nop
+    ad00080a:	00000013          	nop
+    ad00080e:	00000013          	nop
+    ad000812:	00000013          	nop
+    ad000816:	00000013          	nop
+    ad00081a:	00000013          	nop
+    ad00081e:	00000013          	nop
+    ad000822:	00000013          	nop
+    ad000826:	00000013          	nop
+    ad00082a:	00000013          	nop
+    ad00082e:	00000013          	nop
+    ad000832:	00000013          	nop
+    ad000836:	00000013          	nop
+    ad00083a:	00000013          	nop
+    ad00083e:	00000013          	nop
+    ad000842:	00000013          	nop
+    ad000846:	00000013          	nop
+    ad00084a:	00000013          	nop
+    ad00084e:	00000013          	nop
+    ad000852:	00000013          	nop
+    ad000856:	00000013          	nop
+    ad00085a:	00000013          	nop
+    ad00085e:	00000013          	nop
+    ad000862:	00000013          	nop
+    ad000866:	00000013          	nop
+    ad00086a:	00000013          	nop
+    ad00086e:	00000013          	nop
+    ad000872:	00000013          	nop
+    ad000876:	00000013          	nop
+    ad00087a:	00000013          	nop
+    ad00087e:	00000013          	nop
+    ad000882:	00000013          	nop
+    ad000886:	00000013          	nop
+    ad00088a:	00000013          	nop
+    ad00088e:	00000013          	nop
+    ad000892:	00000013          	nop
+    ad000896:	00000013          	nop
+    ad00089a:	00000013          	nop
+    ad00089e:	00000013          	nop
+    ad0008a2:	00000013          	nop
+    ad0008a6:	00000013          	nop
+    ad0008aa:	00000013          	nop
+    ad0008ae:	00000013          	nop
+    ad0008b2:	00000013          	nop
+    ad0008b6:	00000013          	nop
+    ad0008ba:	00000013          	nop
+    ad0008be:	00000013          	nop
+    ad0008c2:	00000013          	nop
+    ad0008c6:	00000013          	nop
+    ad0008ca:	00000013          	nop
+    ad0008ce:	00000013          	nop
+    ad0008d2:	00000013          	nop
+    ad0008d6:	00000013          	nop
+    ad0008da:	00000013          	nop
+    ad0008de:	00000013          	nop
+    ad0008e2:	00000013          	nop
+    ad0008e6:	00000013          	nop
+    ad0008ea:	00000013          	nop
+    ad0008ee:	00000013          	nop
+    ad0008f2:	00000013          	nop
+    ad0008f6:	00000013          	nop
+    ad0008fa:	00000013          	nop
+    ad0008fe:	00000013          	nop
+    ad000902:	00000013          	nop
+    ad000906:	00000013          	nop
+    ad00090a:	00000013          	nop
+    ad00090e:	00000013          	nop
+    ad000912:	00000013          	nop
+    ad000916:	00000013          	nop
+    ad00091a:	00000013          	nop
+    ad00091e:	00000013          	nop
+    ad000922:	00000013          	nop
+    ad000926:	00000013          	nop
+    ad00092a:	00000013          	nop
+    ad00092e:	00000013          	nop
+    ad000932:	00000013          	nop
+    ad000936:	00000013          	nop
+    ad00093a:	00000013          	nop
+    ad00093e:	00000013          	nop
+    ad000942:	00000013          	nop
+    ad000946:	00000013          	nop
+    ad00094a:	00000013          	nop
+    ad00094e:	00000013          	nop
+    ad000952:	00000013          	nop
+    ad000956:	00000013          	nop
+    ad00095a:	00000013          	nop
+    ad00095e:	00000013          	nop
+    ad000962:	00000013          	nop
+    ad000966:	00000013          	nop
+    ad00096a:	00000013          	nop
+    ad00096e:	00000013          	nop
+    ad000972:	00000013          	nop
+    ad000976:	00000013          	nop
+    ad00097a:	00000013          	nop
+    ad00097e:	00000013          	nop
+    ad000982:	00000013          	nop
+    ad000986:	00000013          	nop
+    ad00098a:	00000013          	nop
+    ad00098e:	00000013          	nop
+    ad000992:	00000013          	nop
+    ad000996:	00000013          	nop
+    ad00099a:	00000013          	nop
+    ad00099e:	00000013          	nop
+    ad0009a2:	00000013          	nop
+    ad0009a6:	00000013          	nop
+    ad0009aa:	00000013          	nop
+    ad0009ae:	00000013          	nop
+    ad0009b2:	00000013          	nop
+    ad0009b6:	00000013          	nop
+    ad0009ba:	00000013          	nop
+    ad0009be:	00000013          	nop
+    ad0009c2:	00000013          	nop
+    ad0009c6:	00000013          	nop
+    ad0009ca:	00000013          	nop
+    ad0009ce:	00000013          	nop
+    ad0009d2:	00000013          	nop
+    ad0009d6:	00000013          	nop
+    ad0009da:	00000013          	nop
+    ad0009de:	00000013          	nop
+    ad0009e2:	00000013          	nop
+    ad0009e6:	00000013          	nop
+    ad0009ea:	00000013          	nop
+    ad0009ee:	00000013          	nop
+    ad0009f2:	00000013          	nop
+    ad0009f6:	00000013          	nop
+    ad0009fa:	00000013          	nop
+    ad0009fe:	00000013          	nop
+    ad000a02:	00000013          	nop
+    ad000a06:	00000013          	nop
+    ad000a0a:	00000013          	nop
+    ad000a0e:	00000013          	nop
+    ad000a12:	00000013          	nop
+    ad000a16:	00000013          	nop
+    ad000a1a:	00000013          	nop
+    ad000a1e:	00000013          	nop
+    ad000a22:	00000013          	nop
+    ad000a26:	00000013          	nop
+    ad000a2a:	00000013          	nop
+    ad000a2e:	00000013          	nop
+    ad000a32:	00000013          	nop
+    ad000a36:	00000013          	nop
+    ad000a3a:	00000013          	nop
+    ad000a3e:	00000013          	nop
+    ad000a42:	00000013          	nop
+    ad000a46:	00000013          	nop
+    ad000a4a:	00000013          	nop
+    ad000a4e:	00000013          	nop
+    ad000a52:	00000013          	nop
+    ad000a56:	00000013          	nop
+    ad000a5a:	00000013          	nop
+    ad000a5e:	00000013          	nop
+    ad000a62:	00000013          	nop
+    ad000a66:	00000013          	nop
+    ad000a6a:	00000013          	nop
+    ad000a6e:	00000013          	nop
+    ad000a72:	00000013          	nop
+    ad000a76:	00000013          	nop
+    ad000a7a:	00000013          	nop
+    ad000a7e:	00000013          	nop
+    ad000a82:	00000013          	nop
+    ad000a86:	00000013          	nop
+    ad000a8a:	00000013          	nop
+    ad000a8e:	00000013          	nop
+    ad000a92:	00000013          	nop
+    ad000a96:	00000013          	nop
+    ad000a9a:	00000013          	nop
+    ad000a9e:	00000013          	nop
+    ad000aa2:	00000013          	nop
+    ad000aa6:	00000013          	nop
+    ad000aaa:	00000013          	nop
+    ad000aae:	00000013          	nop
+    ad000ab2:	00000013          	nop
+    ad000ab6:	00000013          	nop
+    ad000aba:	00000013          	nop
+    ad000abe:	00000013          	nop
+    ad000ac2:	00000013          	nop
+    ad000ac6:	00000013          	nop
+    ad000aca:	00000013          	nop
+    ad000ace:	00000013          	nop
+    ad000ad2:	00000013          	nop
+    ad000ad6:	00000013          	nop
+    ad000ada:	00000013          	nop
+    ad000ade:	00000013          	nop
+    ad000ae2:	00000013          	nop
+    ad000ae6:	00000013          	nop
+    ad000aea:	00000013          	nop
+    ad000aee:	00000013          	nop
+    ad000af2:	00000013          	nop
+    ad000af6:	00000013          	nop
+    ad000afa:	00000013          	nop
+    ad000afe:	00000013          	nop
+    ad000b02:	00000013          	nop
+    ad000b06:	00000013          	nop
+    ad000b0a:	00000013          	nop
+    ad000b0e:	00000013          	nop
+    ad000b12:	00000013          	nop
+    ad000b16:	00000013          	nop
+    ad000b1a:	00000013          	nop
+    ad000b1e:	00000013          	nop
+    ad000b22:	00000013          	nop
+    ad000b26:	00000013          	nop
+    ad000b2a:	00000013          	nop
+    ad000b2e:	00000013          	nop
+    ad000b32:	00000013          	nop
+    ad000b36:	00000013          	nop
+    ad000b3a:	00000013          	nop
+    ad000b3e:	00000013          	nop
+    ad000b42:	00000013          	nop
+    ad000b46:	00000013          	nop
+    ad000b4a:	00000013          	nop
+    ad000b4e:	00000013          	nop
+    ad000b52:	00000013          	nop
+    ad000b56:	00000013          	nop
+    ad000b5a:	00000013          	nop
+    ad000b5e:	00000013          	nop
+    ad000b62:	00000013          	nop
+    ad000b66:	00000013          	nop
+    ad000b6a:	00000013          	nop
+    ad000b6e:	00000013          	nop
+    ad000b72:	00000013          	nop
+    ad000b76:	00000013          	nop
+    ad000b7a:	00000013          	nop
+    ad000b7e:	00000013          	nop
+    ad000b82:	00000013          	nop
+    ad000b86:	00000013          	nop
+    ad000b8a:	00000013          	nop
+    ad000b8e:	00000013          	nop
+    ad000b92:	00000013          	nop
+    ad000b96:	00000013          	nop
+    ad000b9a:	00000013          	nop
+    ad000b9e:	00000013          	nop
+    ad000ba2:	00000013          	nop
+    ad000ba6:	00000013          	nop
+    ad000baa:	00000013          	nop
+    ad000bae:	00000013          	nop
+    ad000bb2:	00000013          	nop
+    ad000bb6:	00000013          	nop
+    ad000bba:	00000013          	nop
+    ad000bbe:	00000013          	nop
+    ad000bc2:	00000013          	nop
+    ad000bc6:	00000013          	nop
+    ad000bca:	00000013          	nop
+    ad000bce:	00000013          	nop
+    ad000bd2:	00000013          	nop
+    ad000bd6:	00000013          	nop
+    ad000bda:	00000013          	nop
+    ad000bde:	00000013          	nop
+    ad000be2:	00000013          	nop
+    ad000be6:	00000013          	nop
+    ad000bea:	00000013          	nop
+    ad000bee:	00000013          	nop
+    ad000bf2:	00000013          	nop
+    ad000bf6:	00000013          	nop
+    ad000bfa:	00000013          	nop
+    ad000bfe:	00000013          	nop
+    ad000c02:	00000013          	nop
+    ad000c06:	00000013          	nop
+    ad000c0a:	00000013          	nop
+    ad000c0e:	00000013          	nop
+    ad000c12:	00000013          	nop
+    ad000c16:	00000013          	nop
+    ad000c1a:	00000013          	nop
+    ad000c1e:	00000013          	nop
+    ad000c22:	00000013          	nop
+    ad000c26:	00000013          	nop
+    ad000c2a:	00000013          	nop
+    ad000c2e:	00000013          	nop
+    ad000c32:	00000013          	nop
+    ad000c36:	00000013          	nop
+    ad000c3a:	00000013          	nop
+    ad000c3e:	00000013          	nop
+    ad000c42:	00000013          	nop
+    ad000c46:	00000013          	nop
+    ad000c4a:	00000013          	nop
+    ad000c4e:	00000013          	nop
+    ad000c52:	00000013          	nop
+    ad000c56:	00000013          	nop
+    ad000c5a:	00000013          	nop
+    ad000c5e:	00000013          	nop
+    ad000c62:	00000013          	nop
+    ad000c66:	00000013          	nop
+    ad000c6a:	00000013          	nop
+    ad000c6e:	00000013          	nop
+    ad000c72:	00000013          	nop
+    ad000c76:	00000013          	nop
+    ad000c7a:	00000013          	nop
+    ad000c7e:	00000013          	nop
+    ad000c82:	00000013          	nop
+    ad000c86:	00000013          	nop
+    ad000c8a:	00000013          	nop
+    ad000c8e:	00000013          	nop
+    ad000c92:	00000013          	nop
+    ad000c96:	00000013          	nop
+    ad000c9a:	00000013          	nop
+    ad000c9e:	00000013          	nop
+    ad000ca2:	00000013          	nop
+    ad000ca6:	00000013          	nop
+    ad000caa:	00000013          	nop
+    ad000cae:	00000013          	nop
+    ad000cb2:	00000013          	nop
+    ad000cb6:	00000013          	nop
+    ad000cba:	00000013          	nop
+    ad000cbe:	00000013          	nop
+    ad000cc2:	00000013          	nop
+    ad000cc6:	00000013          	nop
+    ad000cca:	00000013          	nop
+    ad000cce:	00000013          	nop
+    ad000cd2:	00000013          	nop
+    ad000cd6:	00000013          	nop
+    ad000cda:	00000013          	nop
+    ad000cde:	00000013          	nop
+    ad000ce2:	00000013          	nop
+    ad000ce6:	00000013          	nop
+    ad000cea:	00000013          	nop
+    ad000cee:	00000013          	nop
+    ad000cf2:	00000013          	nop
+    ad000cf6:	00000013          	nop
+    ad000cfa:	00000013          	nop
+    ad000cfe:	00000013          	nop
+    ad000d02:	00000013          	nop
+    ad000d06:	00000013          	nop
+    ad000d0a:	00000013          	nop
+    ad000d0e:	00000013          	nop
+    ad000d12:	00000013          	nop
+    ad000d16:	00000013          	nop
+    ad000d1a:	00000013          	nop
+    ad000d1e:	00000013          	nop
+    ad000d22:	00000013          	nop
+    ad000d26:	00000013          	nop
+    ad000d2a:	00000013          	nop
+    ad000d2e:	00000013          	nop
+    ad000d32:	00000013          	nop
+    ad000d36:	00000013          	nop
+    ad000d3a:	00000013          	nop
+    ad000d3e:	00000013          	nop
+    ad000d42:	00000013          	nop
+    ad000d46:	00000013          	nop
+    ad000d4a:	00000013          	nop
+    ad000d4e:	00000013          	nop
+    ad000d52:	00000013          	nop
+    ad000d56:	00000013          	nop
+    ad000d5a:	00000013          	nop
+    ad000d5e:	00000013          	nop
+    ad000d62:	00000013          	nop
+    ad000d66:	00000013          	nop
+    ad000d6a:	00000013          	nop
+    ad000d6e:	00000013          	nop
+    ad000d72:	00000013          	nop
+    ad000d76:	00000013          	nop
+    ad000d7a:	00000013          	nop
+    ad000d7e:	00000013          	nop
+    ad000d82:	00000013          	nop
+    ad000d86:	00000013          	nop
+    ad000d8a:	00000013          	nop
+    ad000d8e:	00000013          	nop
+    ad000d92:	00000013          	nop
+    ad000d96:	00000013          	nop
+    ad000d9a:	00000013          	nop
+    ad000d9e:	00000013          	nop
+    ad000da2:	00000013          	nop
+    ad000da6:	00000013          	nop
+    ad000daa:	00000013          	nop
+    ad000dae:	00000013          	nop
+    ad000db2:	00000013          	nop
+    ad000db6:	00000013          	nop
+    ad000dba:	00000013          	nop
+    ad000dbe:	00000013          	nop
+    ad000dc2:	00000013          	nop
+    ad000dc6:	00000013          	nop
+    ad000dca:	00000013          	nop
+    ad000dce:	00000013          	nop
+    ad000dd2:	00000013          	nop
+    ad000dd6:	00000013          	nop
+    ad000dda:	00000013          	nop
+    ad000dde:	00000013          	nop
+    ad000de2:	00000013          	nop
+    ad000de6:	00000013          	nop
+    ad000dea:	00000013          	nop
+    ad000dee:	00000013          	nop
+    ad000df2:	00000013          	nop
+    ad000df6:	00000013          	nop
+    ad000dfa:	00000013          	nop
+    ad000dfe:	00000013          	nop
+    ad000e02:	00000013          	nop
+    ad000e06:	00000013          	nop
+    ad000e0a:	00000013          	nop
+    ad000e0e:	00000013          	nop
+    ad000e12:	00000013          	nop
+    ad000e16:	00000013          	nop
+    ad000e1a:	00000013          	nop
+    ad000e1e:	00000013          	nop
+    ad000e22:	00000013          	nop
+    ad000e26:	00000013          	nop
+    ad000e2a:	00000013          	nop
+    ad000e2e:	00000013          	nop
+    ad000e32:	00000013          	nop
+    ad000e36:	00000013          	nop
+    ad000e3a:	00000013          	nop
+    ad000e3e:	00000013          	nop
+    ad000e42:	00000013          	nop
+    ad000e46:	00000013          	nop
+    ad000e4a:	00000013          	nop
+    ad000e4e:	00000013          	nop
+    ad000e52:	00000013          	nop
+    ad000e56:	00000013          	nop
+    ad000e5a:	00000013          	nop
+    ad000e5e:	00000013          	nop
+    ad000e62:	00000013          	nop
+    ad000e66:	00000013          	nop
+    ad000e6a:	00000013          	nop
+    ad000e6e:	00000013          	nop
+    ad000e72:	00000013          	nop
+    ad000e76:	00000013          	nop
+    ad000e7a:	00000013          	nop
+    ad000e7e:	00000013          	nop
+    ad000e82:	00000013          	nop
+    ad000e86:	00000013          	nop
+    ad000e8a:	00000013          	nop
+    ad000e8e:	00000013          	nop
+    ad000e92:	00000013          	nop
+    ad000e96:	00000013          	nop
+    ad000e9a:	00000013          	nop
+    ad000e9e:	00000013          	nop
+    ad000ea2:	00000013          	nop
+    ad000ea6:	00000013          	nop
+    ad000eaa:	00000013          	nop
+    ad000eae:	00000013          	nop
+    ad000eb2:	00000013          	nop
+    ad000eb6:	00000013          	nop
+    ad000eba:	00000013          	nop
+    ad000ebe:	00000013          	nop
+    ad000ec2:	00000013          	nop
+    ad000ec6:	00000013          	nop
+    ad000eca:	00000013          	nop
+    ad000ece:	00000013          	nop
+    ad000ed2:	00000013          	nop
+    ad000ed6:	00000013          	nop
+    ad000eda:	00000013          	nop
+    ad000ede:	00000013          	nop
+    ad000ee2:	00000013          	nop
+    ad000ee6:	00000013          	nop
+    ad000eea:	00000013          	nop
+    ad000eee:	00000013          	nop
+    ad000ef2:	00000013          	nop
+    ad000ef6:	00000013          	nop
+    ad000efa:	00000013          	nop
+    ad000efe:	00000013          	nop
+    ad000f02:	00000013          	nop
+    ad000f06:	00000013          	nop
+    ad000f0a:	00000013          	nop
+    ad000f0e:	00000013          	nop
+    ad000f12:	00000013          	nop
+    ad000f16:	00000013          	nop
+    ad000f1a:	00000013          	nop
+    ad000f1e:	00000013          	nop
+    ad000f22:	00000013          	nop
+    ad000f26:	00000013          	nop
+    ad000f2a:	00000013          	nop
+    ad000f2e:	00000013          	nop
+    ad000f32:	00000013          	nop
+    ad000f36:	00000013          	nop
+    ad000f3a:	00000013          	nop
+    ad000f3e:	00000013          	nop
+    ad000f42:	00000013          	nop
+    ad000f46:	00000013          	nop
+    ad000f4a:	00000013          	nop
+    ad000f4e:	00000013          	nop
+    ad000f52:	00000013          	nop
+    ad000f56:	00000013          	nop
+    ad000f5a:	00000013          	nop
+    ad000f5e:	00000013          	nop
+    ad000f62:	00000013          	nop
+    ad000f66:	00000013          	nop
+    ad000f6a:	00000013          	nop
+    ad000f6e:	00000013          	nop
+    ad000f72:	00000013          	nop
+    ad000f76:	00000013          	nop
+    ad000f7a:	00000013          	nop
+    ad000f7e:	00000013          	nop
+    ad000f82:	00000013          	nop
+    ad000f86:	00000013          	nop
+    ad000f8a:	00000013          	nop
+    ad000f8e:	00000013          	nop
+    ad000f92:	00000013          	nop
+    ad000f96:	00000013          	nop
+    ad000f9a:	00000013          	nop
+    ad000f9e:	00000013          	nop
+    ad000fa2:	00000013          	nop
+    ad000fa6:	00000013          	nop
+    ad000faa:	00000013          	nop
+    ad000fae:	00000013          	nop
+    ad000fb2:	00000013          	nop
+    ad000fb6:	00000013          	nop
+    ad000fba:	00000013          	nop
+    ad000fbe:	00000013          	nop
+    ad000fc2:	00000013          	nop
+    ad000fc6:	00000013          	nop
+    ad000fca:	00000013          	nop
+    ad000fce:	00000013          	nop
+    ad000fd2:	00000013          	nop
+    ad000fd6:	00000013          	nop
+    ad000fda:	00000013          	nop
+    ad000fde:	00000013          	nop
+    ad000fe2:	00000013          	nop
+    ad000fe6:	00000013          	nop
+    ad000fea:	00000013          	nop
+    ad000fee:	00000013          	nop
+    ad000ff2:	00000013          	nop
+    ad000ff6:	00000013          	nop
+    ad000ffa:	00000013          	nop
+    ad000ffe:	0001                	nop
+
+00000000ad001000 <user_code>:
+    ad001000:	6285                	lui	t0,0x1
+    ad001002:	0002b303          	ld	t1,0(t0) # 1000 <main-0xacfff000>
+    ad001006:	0082b383          	ld	t2,8(t0)
+    ad00100a:	0102be03          	ld	t3,16(t0)
+    ad00100e:	0182be83          	ld	t4,24(t0)
+
+00000000ad001012 <lp>:
+    ad001012:	a001                	j	ad001012 <lp>
+	...
+
+Disassembly of section .data:
+
+00000000ad002000 <var1>:
+    ad002000:	0001                	nop
+    ad002002:	0000                	unimp
+    ad002004:	0000                	unimp
+	...
+
+00000000ad002008 <var2>:
+    ad002008:	0002                	c.slli64	zero
+    ad00200a:	0000                	unimp
+    ad00200c:	0000                	unimp
+	...
+
+00000000ad002010 <var3>:
+    ad002010:	00000003          	lb	zero,0(zero) # 0 <main-0xad000000>
+    ad002014:	0000                	unimp
+	...
+
+00000000ad002018 <var4>:
+    ad002018:	0004                	0x4
+    ad00201a:	0000                	unimp
+    ad00201c:	0000                	unimp
+	...
+
+00000000ad002020 <satp_config>:
+	...
+
+Disassembly of section .riscv.attributes:
+
+0000000000000000 <.riscv.attributes>:
+   0:	3641                	addiw	a2,a2,-16
+   2:	0000                	unimp
+   4:	7200                	ld	s0,32(a2)
+   6:	7369                	lui	t1,0xffffa
+   8:	01007663          	bgeu	zero,a6,14 <main-0xacffffec>
+   c:	002c                	addi	a1,sp,8
+   e:	0000                	unimp
+  10:	7205                	lui	tp,0xfffe1
+  12:	3676                	fld	fa2,376(sp)
+  14:	6934                	ld	a3,80(a0)
+  16:	7032                	0x7032
+  18:	5f30                	lw	a2,120(a4)
+  1a:	326d                	addiw	tp,tp,-5
+  1c:	3070                	fld	fa2,224(s0)
+  1e:	615f 7032 5f30      	0x5f307032615f
+  24:	3266                	fld	ft4,120(sp)
+  26:	3070                	fld	fa2,224(s0)
+  28:	645f 7032 5f30      	0x5f307032645f
+  2e:	30703263          	0x30703263
+  32:	0800                	addi	s0,sp,16
+  34:	0a01                	addi	s4,s4,0
+  36:	0b              	Address 0x0000000000000036 is out of bounds.
+
